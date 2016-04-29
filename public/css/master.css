@@ -1,0 +1,120 @@
+body{
+    margin: 0px;
+    font-family: 'maison_neuebook';
+}
+ol, ul {
+    list-style: none;
+    padding: 0px;
+}
+h1{
+    font-family: 'maison_neuebold';
+}
+a{
+    color: black;
+}
+p {
+    font-size: 13px;
+    line-height: 22px;
+}
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid;
+    font-family: 'maison_neuebook';
+    font-size: 20px;
+}
+select {
+    border: none;
+    font-family: 'maison_neuebook';
+    font-size: 20px;
+    background-color: white;
+}
+textarea {
+
+    font-family: 'maison_neuebook';
+    font-size: 20px;
+    background-color: white;
+}
+header {
+
+}
+.bloc_article{
+    margin:20px;
+}
+.content {
+    width: 100%;
+    position: absolute;
+}
+.sidebar {
+    display: block;
+    right: 0px;
+    width: 100%;
+    position: absolute;
+}
+
+* { box-sizing: border-box; }
+.grid {
+    width: 100%;
+}
+
+/* clear fix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-item {
+    /*padding: 20px;*/
+    margin: 20px;
+    float: left;
+    width: 300px;
+
+    background-color: white;
+    border: 1px solid #E4E4E4;;
+}
+.link-hover{
+    -webkit-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    -moz-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    -o-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    transition: all 500ms cubic-bezier(0.210, 0.000, 0.000, 1.000);
+    transform: translate(-50%, -250%);
+    position: relative;
+    text-decoration: none;
+}
+.link-hover:hover{
+    letter-spacing: 0px;
+    -webkit-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    -moz-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    -o-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    transition: all 500ms cubic-bezier(0.210, 0.000, 0.000, 1.000); /* custom */
+    transform: translate(-50%, -250%);
+}
+.link-hover:hover .bar{
+    width: 100%;
+    -webkit-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    -moz-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    -o-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    transition: all 500ms cubic-bezier(0.210, 0.000, 0.000, 1.000); /* custom */
+}
+article:hover .bar{
+    width: 100%;
+    -webkit-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    -moz-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    -o-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    transition: all 500ms cubic-bezier(0.210, 0.000, 0.000, 1.000); /* custom */
+}
+.bar{
+    width: 0%;
+    background-color: black;
+    height: 3px;
+    position: absolute;
+    /* top: 0px; */
+    bottom: 0px;
+    left: 0px;
+    -webkit-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    -moz-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    -o-transition: all 500ms cubic-bezier(0.990, 0.005, 0.000, 1.000);
+    transition: all 500ms cubic-bezier(0.210, 0.000, 0.000, 1.000);
+}
