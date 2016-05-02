@@ -3,13 +3,15 @@
 @section('title')
 
 @section('content')
-
+    <div class="post">
     @if(!empty($post))
 
         @if(!is_null($post->picture))
-            <img src="{{url('uploads', $post->picture->uri)}}" alt="" style="width:400px">
+            <div class="blocimg">
+            <img src="{{url('uploads', $post->picture->uri)}}" alt="" style="width: 100%;top: 50%;position: relative;left: 50%;transform: translate(-50%, -50%);">
+            </div>
         @else
-            <p>pas d'image</p>
+            <p></p>
         @endif
 
         <article>
@@ -20,6 +22,7 @@
     @else
         <p>pas d'article</p>
     @endif
+    </div>
 
 
 @endsection

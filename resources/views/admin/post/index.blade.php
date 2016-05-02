@@ -10,9 +10,9 @@
     <table class="table">
         <thead>
         <tr>
-            <th>status</th>
             <th>title</th>
             <th>auteur</th>
+            <th>status</th>
             <th>date</th>
             <th>category</th>
             <th>picture</th>
@@ -20,17 +20,15 @@
             <th>action</th>
         </tr>
         </thead>
-        <div id="confirm">
-            <p>confirmez vous la suppression de la resource <span></span> ?</p>
-        </div>
+
         @forelse($posts as $post)
             <tr>
 
-                <td>{{$post->status}}</td>
                 <td><a href="{{url('post',[$post->id, 'edit'])}}" class="">{{$post->title}}</a></td>
                 <td>{{$post->user? $post->user->name : 'aucun auteur'}}</td>
+                <td>{{$post->status}}</td>
 
-                <td>date de publication: {{$post->published_at? $post->published_at : 'Non daté'}}</td>
+                <td>{{$post->published_at? $post->published_at : 'Non daté'}}</td>
                 <td>
                     @if(!is_null($post->category))
                         {{$post->category->id}}
@@ -52,7 +50,7 @@
                         aucun tag
                     @endforelse
                 </td>
-                <td>
+                <td class="button">
                     <form class="destroy" method="POST" action="{{url('post', $post->id)}}">
                         {{ method_field('DELETE') }}
                         {{ csrf_field() }}

@@ -3,7 +3,7 @@
 @section('title', $title)
 
 @section('content')
-    <div class="grid"  data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
+    <div class="grid">
 
 @forelse($posts as $post)
     <div class="grid-item">
@@ -12,17 +12,19 @@
                 <img src="{{url('uploads', $post->picture->uri)}}" alt="" style="width:100%">
             </a>
     @else
-        <p style="margin:20px">pas d'image</p>
+        <p style="margin:20px"></p>
     @endif
     <div class="bloc_article">
     @if( !is_null( $post ))
         <article>
             <h1>
-                <a href="{{url('post', $post->id)}}" class="link-hover">{{$post->title}}</a>
-                <span class="bar"></span>
+                <a href="{{url('post', $post->id)}}" class="link-hover">{{$post->title}} <span class="bar"></span></a>
             </h1>
-            <p>{{$post->content}}</p>
-            <a href="{{url('post', $post->id)}}">Lire la suite...</a>
+            <p>
+                {{$post->content}}
+                <a href="{{url('post', $post->id)}}">Lire la suite...</a>
+            </p>
+
         </article>
     @else
         <p>Pas de catégorie associée pour cette article {{$post->id}} </p>
@@ -30,9 +32,9 @@
 
 
     @if( !is_null( $post->user ))
-        <p> auteur: {{$post->user->email}}</p>
+        <p class="note"> {{$post->user->email}}</p>
     @else
-        <p>pas d'auteur</p>
+        <p class="note">pas d'auteur</p>
     @endif
     </div>
     </div>

@@ -1,6 +1,6 @@
-ICI C LA NAV
+
 <?php $connect= Auth::check()? true:false ?>
-<ul>
+<ul class="textnav">
     <li><a href="{{url('/')}}">Accueil</a></li>
     @if($connect===true)
         <li><a href="{{url('/logout')}}">Logout</a></li>

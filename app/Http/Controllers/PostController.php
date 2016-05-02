@@ -84,6 +84,7 @@ class PostController extends Controller
         $categories = Category::lists('title', 'id');
         $tags = Tag::lists('name', 'id');
         $userId = Auth::user()->id;
+        
 
         return view('admin.post.edit', compact('post', 'categories', 'tags', 'userId'));
     }

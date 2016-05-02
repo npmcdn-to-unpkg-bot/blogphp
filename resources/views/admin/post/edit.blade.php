@@ -6,20 +6,19 @@
         <p>{{Session::get('message')}}</p>
     @endif
 
-    <form method="POST" action="{{url('post', $post->id)}}" >
+    <form method="POST" action="{{url('post', $post->id)}}" class="edit">
         <input type="hidden" name="_method" value="PATCH">
         <input type="hidden" name="user_id" value="{{$userId}}">
         {{csrf_field()}}
         <p>
-            <label>Titre</label>
+            <label>Titre</label><br>
             <input type="text" name="title" value="{{$post->title}}">
         </p>
-        <label>Contenu</label>
 
+        <label>Contenu</label><br>
         @if($errors->has('title'))
             <span class="error">{{$errors->first('title')}}</span>
         @endif
-
             <textarea name="content">{{$post->content}}</textarea>
 
         @if($errors->has('content'))
@@ -27,7 +26,7 @@
         @endif
 
         <div class="form-select">
-            <label for="category_id">Catégorie</label>
+            <label for="category_id">Catégorie</label><br>
             <select name="category_id">
                 @foreach( $categories as $id=>$title )
                     <option {{$post->category_id==$id? 'selected' : ''}} value="{{$id}}">{{$title}}</option>
@@ -38,24 +37,26 @@
 
         <p>
             @if(is_null($post->picture))
-            <label for="name">Nom de l'image</label>
+            <label for="name">Nom de l'image</label><br>
             <input type="text" name="name"><br>
-            <label for="picture">Changer l'image</label>
+            <label for="picture">Télécharger une image</label><br>
             <input type="file" name="picture">
 
             @if($errors->has('picture'))
                 <span class="error">{{$errors->first('picture')}}</span>
             @endif
             @else
-                {{$post->picture->name}}
-                <img src="{{url('uploads', $post->picture->uri)}}" alt="">
+                {{$post->picture->name}}<br>
+                <img src="{{url('uploads', $post->picture->uri)}}" alt=""><br>
+                <label for="picture">Changer l'image</label><br>
+                <input type="file" name="picture">
 
             @endif
         </p>
 
 
         <div class="form-select">
-            <label for="tag_id">Mot clé</label>
+            <label for="tag_id">Mot clé</label><br>
             <select name="tag_id[]" multiple>
                 @foreach( $tags as $id => $title )
                     <option  value="{{$id}}">{{$title}}</option>

@@ -27,7 +27,7 @@
 </div>
 <footer id="footer" role="contentinfo" class="line pam txtcenter">
 </footer>
-<script src="{{url('assets/js/app.min.js')}}"></script>
+<!-- <script src="{{url('assets/js/app.min.js')}}"></script>-->
 
 </body>
 </html>
