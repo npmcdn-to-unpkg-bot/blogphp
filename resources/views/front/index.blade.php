@@ -22,7 +22,7 @@
             </h1>
             <p>
                 {{$post->content}}
-                <a href="{{url('post', $post->id)}}">Lire la suite...</a>
+                <a href="{{url('post', $post->id)}}">Lire la suite AAAA...</a>
             </p>
 
         </article>
