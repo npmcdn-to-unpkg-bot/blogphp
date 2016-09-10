@@ -5,7 +5,7 @@
     <title>Blog PHP</title>
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/fonts/stylesheet.css">
-    <script src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.js"></script>
 </head>
 <body>
 <header>
